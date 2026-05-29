@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Italia Restaurant</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#f5f5f5;
+      color:#333;
+    }
+
+    header{
+      background:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600') center/cover;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+    }
+
+    header .hero{
+      background:rgba(0,0,0,0.6);
+      padding:40px;
+      border-radius:20px;
+    }
+
+    header h1{
+      font-size:70px;
+      margin-bottom:20px;
+    }
+
+    nav{
+      background:#111;
+      padding:20px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    nav ul{
+      display:flex;
+      justify-content:center;
+      list-style:none;
+      gap:40px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-size:18px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#ff9800;
+    }
+
+    section{
+      display:none;
+      padding:80px 10%;
+      min-height:100vh;
+    }
+
+    section.active{
+      display:block;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+      font-size:40px;
+    }
+
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:20px;
+    }
+
+    .menu-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .menu-card{
+      background:white;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .menu-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .menu-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .tiramisu-img{
+      object-position:center 30%;
+    }
+
+    .menu-card-content{
+      padding:20px;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:20px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+      border-radius:20px;
+    }
+
+    .contact{
+      background:#222;
+      color:white;
+      border-radius:20px;
+      text-align:center;
+      padding:50px;
+    }
+
+    footer{
+      background:#111;
+      color:white;
+      text-align:center;
+      padding:20px;
+    }
+
+    @media(max-width:900px){
+
+      .about{
+        grid-template-columns:1fr;
+      }
+
+      header h1{
+        font-size:45px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="hero">
+    <h1>Italia</h1>
+    <p>Najlepsza włoska restauracja</p>
+  </div>
+
+</header>
+
+<nav>
+
+  <ul>
+    <li><a onclick="showSection('about')">O nas</a></li>
+    <li><a onclick="showSection('menu')">Menu</a></li>
+    <li><a onclick="showSection('gallery')">Galeria</a></li>
+    <li><a onclick="showSection('contact')">Kontakt</a></li>
+  </ul>
+
+</nav>
+
+<!-- O NAS -->
+
+<section id="about" class="active">
+
+  <h2 class="section-title">O nas</h2>
+
+  <div class="about">
+
+    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1200">
+
+    <div>
+
+      <h3>Tradycyjna włoska kuchnia</h3>
+
+      <br>
+
+      <p>
+        Italia to miejsce stworzone z pasji do prawdziwej włoskiej kuchni.
+        Serwujemy świeże makarony, pizzę z pieca opalanego drewnem
+        oraz wyjątkowe desery przygotowywane według tradycyjnych receptur.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- MENU -->
+
+<section id="menu">
+
+  <h2 class="section-title">Nasze Menu</h2>
+
+  <div class="menu-container">
+
+    <!-- PIZZA -->
+
+    <div class="menu-card">
+
+      <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200">
+
+      <div class="menu-card-content">
+
+        <h3>Pizza Margherita</h3>
+
+        <p>Świeże pomidory, mozzarella i bazylia.</p>
+
+      </div>
+
+    </div>
+
+    <!-- CARBONARA -->
+
+    <div class="menu-card">
+
+      <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?q=80&w=1200">
+
+      <div class="menu-card-content">
+
+        <h3>Spaghetti Carbonara</h3>
+
+        <p>Makaron z boczkiem, parmezanem i kremowym sosem.</p>
+
+      </div>
+
+    </div>
+
+    <!-- TIRAMISU -->
+
+    <div class="menu-card">
+
+      <img class="tiramisu-img" src="https://images.unsplash.com/photo-1542124948-dc391252a940?q=80&w=1200">
+
+      <div class="menu-card-content">
+
+        <h3>Tiramisu</h3>
+
+        <p>Klasyczny włoski deser z mascarpone i kawą.</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- GALERIA -->
+
+<section id="gallery">
+
+  <h2 class="section-title">Galeria</h2>
+
+  <div class="gallery">
+
+    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1200">
+
+    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200">
+
+    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1200">
+
+  </div>
+
+</section>
+
+<!-- KONTAKT -->
+
+<section id="contact">
+
+  <h2 class="section-title">Kontakt</h2>
+
+  <div class="contact">
+
+    <p>📍 ul. Restauracyjna 10, Kraków</p>
+
+    <br>
+
+    <p>📞 +48 123 456 789</p>
+
+    <br>
+
+    <p>📧 kontakt@italia.pl</p>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <p>© 2026 Italia Restaurant</p>
+
+</footer>
+
+<script>
+
+function showSection(sectionId) {
+
+  const sections = document.querySelectorAll('section');
+
+  sections.forEach(section => {
+    section.classList.remove('active');
+  });
+
+  document.getElementById(sectionId).classList.add('active');
+
+}
+
+</script>
+
+</body>
+</html>
